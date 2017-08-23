@@ -7,9 +7,21 @@ import {Component} from '@angular/core';
 export class ServerComponent {
   serverId: number = 10;
   serverName: string = 'Paul';
-  serverStatus: string = 'offline';
+  serverStatus: string = '';
+
+  constructor() {
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+  }
 
   getServerStatus() {
     return this.serverStatus;
+  }
+
+  getAlertClass() {
+    return this.serverStatus === 'online' ? 'alert-success' : 'alert-danger';
+  }
+
+  getFontSize() {
+    return this.serverStatus === 'online' ? '14px' : '16px';
   }
 }

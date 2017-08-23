@@ -1,1 +1,3 @@
-<p>{{'Server ' + serverName}} with ID {{serverId}} is {{getServerStatus()}}</p>
+<div [ngStyle]="{fontSize: getFontSize()}" class="alert" [ngClass]="getAlertClass()">
+  {{'Server ' + serverName}} with ID {{serverId}} is {{getServerStatus()}}
+</div>
